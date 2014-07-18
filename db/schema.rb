@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140718025745) do
+ActiveRecord::Schema.define(version: 20140718030644) do
+
+  create_table "aa_service_orders", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "aa_vendors", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "car_owners", force: true do |t|
     t.integer  "user_id"
