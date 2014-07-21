@@ -60,14 +60,10 @@
     <!-- BEGIN HORIZANTAL MENU -->
     <!-- DOC: Apply "hor-menu-light" class after the "hor-menu" class below to have a horizontal menu with white background -->
     <!-- DOC: This is desktop version of the horizontal menu. The mobile version is defined(duplicated) sidebar menu below. So the horizontal menu has 2 seperate versions -->
-    <div class="hor-menu hidden-sm hidden-xs">
+    <div class="hor-menu">
       <%= render "shared/menu" %>
     </div>
     <!-- END HORIZANTAL MENU -->
-    <!-- BEGIN RESPONSIVE MENU TOGGLER -->
-    <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
-    </a>
-    <!-- END RESPONSIVE MENU TOGGLER -->
     <!-- BEGIN TOP NAVIGATION MENU -->
     <div class="top-menu">
       <ul class="nav navbar-nav pull-right">
@@ -83,17 +79,6 @@
 </div>
 <!-- BEGIN CONTAINER -->
 <div class="page-container">
-  <!-- BEGIN SIDEBAR -->
-  <div class="page-sidebar-wrapper">
-    <!-- BEGIN HORIZONTAL RESPONSIVE MENU -->
-    <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
-    <!-- DOC: Change data-auto-speed="200" to adjust the sub menu slide up/down speed -->
-    <div class="page-sidebar navbar-collapse collapse">
-    <%= render "shared/sidebar_menu" %>
-    </div>
-    <!-- END HORIZONTAL RESPONSIVE MENU -->
-  </div>
-  <!-- END SIDEBAR -->
   <!-- BEGIN CONTENT -->
   <div class="page-content-wrapper">
     <div class="page-content">

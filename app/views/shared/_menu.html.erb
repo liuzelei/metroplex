@@ -13,10 +13,8 @@
       <li><%= link_to "服务管理", services_path, { id: "menu_services" } %></li>
     </ul>
   </li>
-  
-  
 </ul>
 
 <% content_for :page_scripts do %>
-  <%= javascript_include_tag 'highlight_menu', 'data-turbolinks-track' => false %>
+<%= javascript_include_tag 'highlight_menu', 'data-turbolinks-track' => false %>
 <% end %>
