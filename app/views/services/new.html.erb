@@ -1,0 +1,31 @@
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+  <h4 class="modal-title">定义服务</h4>
+</div>
+<%= form_for(@service, method: :post, class: "form-horizontal" ) do |f| %>
+<div class="modal-body">
+  <div class="portlet">
+    <div class="portlet-body form">
+      <div class="form-body form-horizontal">
+        <div class="form-body">
+          <%= f.error_messages %>
+          <div class="form-group">
+            <label class="control-label col-md-2">服务编号</label>
+             <div class="col-md-3">
+              <%= f.text_field(:no, :class => "form-control") %>
+             </div>
+             <label class="control-label col-md-2">服务名称</label>
+             <div class="col-md-3">
+              <%= f.text_field(:name, :class => "form-control") %>
+             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal-footer">
+  <button type="submit" class="btn">提交</button>
+  <button type="button" data-dismiss="modal" class="btn default">关闭</button>
+</div>
+<% end %>

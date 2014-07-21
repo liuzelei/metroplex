@@ -2,8 +2,14 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
-
+# mysql
 gem 'mysql2'
+# devise
+gem 'devise', '3.2.4'
+# devise_cas
+gem 'devise_cas_authenticatable', '1.3.6'
+# cancan
+gem 'cancan', '1.6.9'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
