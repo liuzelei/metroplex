@@ -1,0 +1,8 @@
+zh_CN:
+  activerecord:
+    models:
+      service: '服务项目'
+    attributes:
+      service:
+        "no": '编号'
+        name: '名称'
