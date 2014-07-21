@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :users
 
   # resources :services
-  resources :services 
+  resources :services, only: [:index]
 
   get "home/index"
   
