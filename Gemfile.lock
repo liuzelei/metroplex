@@ -1,3 +1,12 @@
+GIT
+  remote: git@github.com:liuzelei/model_concerns.git
+  revision: 725f57a53b4dee4cbe9e014aefc1f29f03fde1f4
+  tag: v0.0.2
+  specs:
+    model_concerns (0.0.2)
+      activerecord
+      activesupport
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -78,6 +87,9 @@ GEM
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     json (1.8.1)
+    kaminari (0.15.1)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     libv8 (3.16.14.3)
     listen (2.7.9)
       celluloid (>= 0.15.2)
@@ -93,6 +105,9 @@ GEM
     multi_json (1.10.1)
     mysql2 (0.3.16)
     orm_adapter (0.5.0)
+    paper_trail (3.0.3)
+      activerecord (>= 3.0, < 5.0)
+      activesupport (>= 3.0, < 5.0)
     polyglot (0.3.5)
     pry (0.10.0)
       coderay (~> 1.1.0)
@@ -204,7 +219,10 @@ DEPENDENCIES
   guard
   jbuilder (~> 2.0)
   jquery-rails
+  kaminari (~> 0.15.1)
+  model_concerns!
   mysql2
+  paper_trail (~> 3.0.0)
   rails (= 4.1.4)
   rspec
   rspec-rails

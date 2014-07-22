@@ -1,0 +1,59 @@
+<% content_for :page_title do %>
+<%= render "title_bar" %>
+<% end %>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="portlet box">
+      <div class="dataTables_wrapper form-inline" role="grid">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+              <%= form_tag vendors_path, :method => 'get' do %>
+              <div class="dataTables_filter pull-left">
+                <label>
+                  关键字:<%= text_field_tag :search, params[:search], :class => "form-control input-small" %>
+                </label>
+                <%= submit_tag '查询', :name => nil, :class => 'btn' %>
+              </div>
+              <% end %>
+            </div>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-striped table-bordered table-hover">
+            <thead>
+              <tr>
+                <th>公司名称</th>
+                <th>所在省</th>
+                <th>联络人</th>
+                <th>职务</th>
+                <th>电话</th>
+                <th>手机</th>
+                <th>传真</th>
+                <th>邮箱</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @vendors.each do |f| %>
+                <tr>
+                  <td><%= f.name %></td>
+                  <td><%= f.province %></td>
+                  <td><%= f.contacts %></td>
+                  <td><%= f.contacts_position %></td>
+                  <td><%= f.telephone %></td>
+                  <td><%= f.mobile %></td>
+                  <td><%= f.fax %></td>
+                  <td><%= f.email %></td>
+                  <td>
+                    <%= link_to '编辑', edit_vendor_path(f) %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+          <%= paginate @vendors %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

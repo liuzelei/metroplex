@@ -10,6 +10,12 @@ gem 'devise', '3.2.4'
 gem 'devise_cas_authenticatable', '1.3.6'
 # cancan
 gem 'cancan', '1.6.9'
+# kaminari
+gem 'kaminari', '~> 0.15.1'
+# paper_trail
+gem 'paper_trail', '~> 3.0.0'
+# custom gem
+gem 'model_concerns', git: 'git@github.com:liuzelei/model_concerns.git', tag: 'v0.0.2'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
