@@ -9,10 +9,10 @@ RSpec.describe ServicesController, :type => :controller do
     end
 
     it "index list record count" do
-      FactoryGirl.create(:service)
-      FactoryGirl.create(:service, no: "MT", name: "保养")
-      FactoryGirl.create(:service, no: "CW", name: "洗车")
-      FactoryGirl.create(:service, no: "RP", name: "维修")
+      FactoryGirl.create(:aa_service)
+      FactoryGirl.create(:mt_service)
+      FactoryGirl.create(:cw_service)
+      FactoryGirl.create(:rp_service)
       get 'index'
       expect(assigns(:services).count).to eq(4)
     end
