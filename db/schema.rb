@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140722090028) do
+ActiveRecord::Schema.define(version: 20140722175610) do
 
   create_table "aa_service_orders", force: true do |t|
     t.datetime "created_at"
@@ -65,6 +65,26 @@ ActiveRecord::Schema.define(version: 20140722090028) do
     t.string   "account_name"
     t.string   "account_password"
     t.string   "status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "did_binds", force: true do |t|
+    t.string   "did_number"
+    t.integer  "vendor_id"
+    t.string   "vendor_phone"
+    t.string   "customer_phone"
+    t.datetime "started_at"
+    t.datetime "ended_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "dids", force: true do |t|
+    t.string   "number"
+    t.integer  "vendor_id"
+    t.string   "vendor_phone"
+    t.string   "customer_phone"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
