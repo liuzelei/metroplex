@@ -1,6 +1,7 @@
 GIT
-  remote: git@github.com:liuzelei/model_concerns.git
-  revision: a685d18c611b31bd9f6fad91d09a3d21eb21d985
+  remote: https://github.com/liuzelei/model_concerns.git
+  revision: 725f57a53b4dee4cbe9e014aefc1f29f03fde1f4
+  tag: v0.0.2
   specs:
     model_concerns (0.0.2)
       activerecord
