@@ -1,0 +1,70 @@
+<% content_for :page_title do %>
+<%= render "title_bar" %>
+<% end %>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="portlet box">
+      <div class="portlet-body form">
+        <%= form_for(@vendor, html: { class: "form-horizontal" } ) do |f| %>
+         <div class="form-body">
+           <%= f.error_messages %>
+           <h4 class="form-section">基本信息</h4>
+           <div class="form-group">
+             <%= render "shared/column", :name => "名称", :content => f.c_text_field(:name) %>
+             <label class="control-label col-md-1">禁用</label>
+             <div class="col-md-1">
+               <div class="checkbox-list">
+                 <label class="checkbox-inline">
+                   <%= f.check_box(:disabled?, :class => "form-control" ) %>
+                 </label>
+               </div>
+             </div>
+           </div>
+
+           <div class="form-group">
+             <label class="control-label col-md-1">办公地址</label>
+             <div class="col-md-2">
+               <%= f.select(:province, District.provinces, {}, { class: "form-control select2me", data: { placeholder: "请选择" } }) %>
+             </div>
+             <div class="col-md-2">
+               <%= f.select(:city, District.cities(@vendor.province), {}, { class: "form-control select2me", data: { placeholder: "请选择" } }) %>
+             </div>
+             <div class="col-md-2">
+               <%= f.select(:region, District.regions(@vendor.province, @vendor.city), {}, { :class=>"form-control select2me", data: { placeholder: "请选择" } }) %>
+             </div>
+             <div class='col-md-5'>
+               <%= f.c_text_field(:address) %>
+             </div>
+           </div>
+
+           <div class="form-group">
+             <%= render "shared/column", :name => "联系人", :content => f.c_text_field(:contacts) %>
+             <%= render "shared/column", :name => "职务", :content => f.c_text_field(:contacts_position) %>
+             <%= render "shared/column", :name => "电话", :content => f.c_text_field(:telephone) %>
+           </div>
+           
+           <div class="form-group">
+             <%= render "shared/column", :name => "手机", :content => f.c_text_field(:mobile) %>
+             <%= render "shared/column", :name => "邮箱", :content => f.c_text_field(:email) %>
+             <%= render "shared/column", :name => "传真", :content => f.c_text_field(:fax) %>
+           </div>
+
+           <div class="form-group">
+             <label class="control-label col-md-1">备注</label>
+             <div class='col-md-11'>
+               <%= f.text_area(:memo, { :class => "form-control" }) %>
+             </div>
+           </div>
+         </div>
+         <div class="form-actions right">
+           <button type="submit" class="btn">保存</button>
+         </div>
+        <% end %>  
+        </div>
+    </div>
+  </div>
+</div>
+<% content_for :page_scripts do %>
+  <%= javascript_include_tag "vendors" %> 
+<% end %>
