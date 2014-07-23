@@ -1,0 +1,82 @@
+<% content_for :page_title do %>
+<%= render "title_bar" %>
+<% end %>
+
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="portlet box blue" id="form_wizard_1">
+      <div class="portlet-title">
+        <div class="caption">
+          <i class="fa fa-gift"></i> 注册向导 - <span class="step-title">
+          步骤 1 / 4 </span>
+        </div>
+      </div>
+      <div class="portlet-body form">
+        <form action="#" class="form-horizontal" id="submit_form" method="POST">
+        
+                <div class="form-wizard">
+                  <div class="form-body">
+                    <ul class="nav nav-pills nav-justified steps">
+                      <li>
+                        <a href="#tab1" data-toggle="tab" class="step">
+                        <span class="number">
+                        1 </span>
+                        <span class="desc">
+                        <i class="fa fa-check"></i> 基本信息 </span>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#tab2" data-toggle="tab" class="step">
+                        <span class="number">
+                        2 </span>
+                        <span class="desc">
+                        <i class="fa fa-check"></i> 确认 </span>
+                        </a>
+                      </li>
+                    </ul>
+                    <div id="bar" class="progress progress-striped" role="progressbar">
+                      <div class="progress-bar progress-bar-success">
+                      </div>
+                    </div>
+                    <div class="tab-content">
+                      <div class="alert alert-danger display-none">
+                        <button class="close" data-dismiss="alert"></button>
+                        页面中有错误,请检查下面.
+                      </div>
+                      <div class="alert alert-success display-none">
+                        <button class="close" data-dismiss="alert"></button>
+                        验证通过!
+                      </div>
+                      <%= render "vendor" %>
+                      <%= render "confirm" %>
+                    </div>
+                  </div>
+                  <div class="form-actions fluid">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="col-md-offset-3 col-md-9">
+                          <a href="javascript:;" class="btn default button-previous">
+                          <i class="m-icon-swapleft"></i> 上一步 </a>
+                          <a href="javascript:;" class="btn blue button-next">
+                          下一步 <i class="m-icon-swapright m-icon-white"></i>
+                          </a>
+                          <a href="javascript:;" class="btn green button-submit">
+                          提交 <i class="m-icon-swapright m-icon-white"></i>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+        
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% content_for :page_scripts do %>
+  <%= javascript_include_tag "vendor_wizards" %> 
+  <%= javascript_include_tag "vendors" %> 
+<% end %>
