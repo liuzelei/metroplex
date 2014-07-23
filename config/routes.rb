@@ -21,6 +21,11 @@ Rails.application.routes.draw do
     get "districts/regions", defaults: { format: 'json' }
   end
 
+  namespace :wizards do
+    resources :aa_vendors, only: [:new, :create]
+    resources :vendors
+  end
+
   get "home/index"
   
   root 'home#index'

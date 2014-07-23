@@ -1,9 +1,9 @@
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
-  # protect_from_forgery with: :exception
-  # before_action :authenticate_user!
-  # before_filter :set_current_user
+  protect_from_forgery with: :exception
+  before_action :authenticate_user!
+  before_filter :set_current_user
   layout :layout_by_resource
 
   before_filter do
@@ -14,13 +14,13 @@ class ApplicationController < ActionController::Base
     params[resource] &&= (send(method_each_action) if respond_to?(method_each_action, true)) || (send(method_all_in_one) if respond_to?(method_all_in_one, true))
   end
 
-  # rescue_from CanCan::AccessDenied do |exception|
-  #   render :file => "#{Rails.root}/public/403.html", :status => 403, :layout => false
-  # end
+  rescue_from CanCan::AccessDenied do |exception|
+    render :file => "#{Rails.root}/public/403.html", :status => 403, :layout => false
+  end
   
-  # def set_current_user
-  #   User.current_user = current_user
-  # end
+  def set_current_user
+    User.current_user = current_user
+  end
 
   protected
 

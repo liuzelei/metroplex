@@ -30,7 +30,6 @@ ActiveRecord::Schema.define(version: 20140722175610) do
   create_table "aa_vendors", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "no"
     t.datetime "disabled_at"
   end
 
@@ -120,6 +119,8 @@ ActiveRecord::Schema.define(version: 20140722175610) do
     t.string   "role"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "email"
+    t.string   "name"
   end
 
   create_table "vendors", force: true do |t|
@@ -131,8 +132,6 @@ ActiveRecord::Schema.define(version: 20140722175610) do
     t.string   "address"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "contacts"
-    t.string   "contacts_position"
     t.string   "mobile"
     t.string   "telephone"
     t.string   "fax"
@@ -141,6 +140,8 @@ ActiveRecord::Schema.define(version: 20140722175610) do
     t.string   "status"
     t.datetime "disabled_at"
     t.integer  "aa_vendor_id"
+    t.string   "contact"
+    t.string   "contact_position"
   end
 
   create_table "versions", force: true do |t|
