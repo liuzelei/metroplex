@@ -13,7 +13,7 @@ class Vendor < ActiveRecord::Base
   sequence :VE
 
   # search
-  quick_search :name, :province, :city, :region, :address, :mobile, :telephone, :contacts
+  quick_search :name, :province, :city, :region, :address, :mobile, :telephone, :contact
 
   # paper_trail
   has_paper_trail

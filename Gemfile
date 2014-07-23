@@ -15,7 +15,7 @@ gem 'kaminari', '~> 0.15.1'
 # paper_trail
 gem 'paper_trail', '~> 3.0.0'
 # custom gem
-gem 'model_concerns', git: 'git@github.com:liuzelei/model_concerns.git', tag: 'v0.0.2'
+gem 'model_concerns', git: 'https://github.com/liuzelei/model_concerns', tag: 'v0.0.2'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
@@ -50,6 +50,7 @@ gem 'spring',        group: :development
 group :test, :development do
   gem 'rspec'
   gem 'rspec-rails'
+  gem 'rspec-collection_matchers'
   gem 'factory_girl'
   gem 'factory_girl_rails'
   gem 'guard'
