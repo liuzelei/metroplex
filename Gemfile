@@ -15,7 +15,7 @@ gem 'kaminari', '~> 0.15.1'
 # paper_trail
 gem 'paper_trail', '~> 3.0.0'
 # custom gem
-gem 'model_concerns', git: 'https://github.com/liuzelei/model_concerns', tag: 'v0.0.2'
+gem 'model_concerns', github: 'liuzelei/model_concerns', tag: 'v0.0.2'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
