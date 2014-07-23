@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140722175610) do
+ActiveRecord::Schema.define(version: 20140723062520) do
 
   create_table "aa_service_orders", force: true do |t|
     t.datetime "created_at"
