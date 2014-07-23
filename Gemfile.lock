@@ -1,5 +1,5 @@
 GIT
-  remote: https://github.com/liuzelei/model_concerns
+  remote: git://github.com/liuzelei/model_concerns.git
   revision: 725f57a53b4dee4cbe9e014aefc1f29f03fde1f4
   tag: v0.0.2
   specs:
