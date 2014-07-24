@@ -4,6 +4,8 @@ RSpec.describe VendorsController, :type => :controller do
 
   before do
     @vendor = FactoryGirl.create(:vendor)
+    @user = FactoryGirl.create(:admin_user)
+    sign_in :user, @user
   end
 
   describe "GET 'index'" do
