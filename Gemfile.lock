@@ -1,4 +1,13 @@
 GIT
+  remote: git://github.com/liuzelei/central_account.git
+  revision: 8ac5b4a954a23da64d633c2cefdb9419a73a2adc
+  tag: v0.0.1
+  specs:
+    central_account (0.0.1)
+      activerecord
+      activesupport
+
+GIT
   remote: git://github.com/liuzelei/model_concerns.git
   revision: 725f57a53b4dee4cbe9e014aefc1f29f03fde1f4
   tag: v0.0.2
@@ -217,6 +226,7 @@ PLATFORMS
 
 DEPENDENCIES
   cancan (= 1.6.9)
+  central_account!
   codeclimate-test-reporter
   coffee-rails (~> 4.0.0)
   devise (= 3.2.4)
