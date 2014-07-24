@@ -1,5 +1,5 @@
 module ApplicationHelper
-  ActionView::Base.default_form_builder = CustomFormBuilder
+  ActionView::Base.default_form_builder = FormHelper::CustomFormBuilder
   
   def page_title
     case params[:action]

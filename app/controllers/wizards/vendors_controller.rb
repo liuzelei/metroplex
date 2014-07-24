@@ -1,5 +1,6 @@
 module Wizards
   class VendorsController < ApplicationController
+    layout "wizard"
     def index
 
     end

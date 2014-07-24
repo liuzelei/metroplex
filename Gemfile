@@ -54,7 +54,10 @@ group :test, :development do
   gem 'factory_girl'
   gem 'factory_girl_rails'
   gem 'guard'
-  gem "codeclimate-test-reporter"
+  gem 'guard-rails'
+  gem 'guard-rspec'
+  gem 'codeclimate-test-reporter'
+  gem 'simplecov'
 end
 
 # Use debugger

@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   # resources :vendors
   resources :vendors
 
+  # did
+  resources :dids, only: [:index, :show]
+
   namespace :ajax do
     get "districts/provinces", defaults: { format: 'json' }
     get "districts/cities", defaults: { format: 'json' }

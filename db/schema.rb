@@ -68,6 +68,26 @@ ActiveRecord::Schema.define(version: 20140723062520) do
     t.datetime "updated_at"
   end
 
+  create_table "did_binds", force: true do |t|
+    t.string   "did_number"
+    t.integer  "vendor_id"
+    t.string   "vendor_phone"
+    t.string   "customer_phone"
+    t.datetime "started_at"
+    t.datetime "ended_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "dids", force: true do |t|
+    t.string   "number"
+    t.integer  "vendor_id"
+    t.string   "vendor_phone"
+    t.string   "customer_phone"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "districts", force: true do |t|
     t.string   "code"
     t.string   "province"
