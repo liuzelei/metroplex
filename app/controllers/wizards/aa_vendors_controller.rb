@@ -17,9 +17,9 @@ module Wizards
     private
     def aa_vendor_params
       params.require(:aa_vendor).permit(
-        :aa_trailers_attributes => [:license_no,:car_type,:_destroy,:id],
-        :aa_regions_attributes =>[:province,:city,:district,:_destroy,:id],
-        :aa_workers_attributes => [:name,:mobile,:id_no,:driving_license_no,:qualification_no,:_destroy,:id]
+        aa_trailers_attributes: [:license_no,:car_type,:_destroy,:id],
+        aa_regions_attributes: [:province,:city,:district,:_destroy,:id],
+        aa_workers_attributes: [:name,:mobile,:id_no,:driving_license_no,:qualification_no,:_destroy,:id]
         )
     end
   end
