@@ -1,68 +1,76 @@
-
 <div class="tab-pane active" id="tab1">
   <div class="form-group">
     <label class="control-label col-md-3">名称 <span class="required">
     * </span>
     </label>
     <div class="col-md-4">
-      <input type="text" class="form-control" name="username"/>
+      <!-- <input type="text" class="form-control" name="name"/> -->
+      <%= f.c_text_field(:name) %>
     </div>
   </div>
   <div class="form-group">
     <label class="control-label col-md-3">办公地址</label>
     <div class="col-md-2">
-     <%= select_tag(:province, options_for_select(District.provinces), { :class => "form-control select2me" }) %>
+     <%= f.select(:province, District.provinces, {}, { class: "form-control select2me", data: { placeholder: "请选择" } }) %>
    </div>
    <div class="col-md-2">
-     <%= select_tag(:city, nil, { class: "form-control select2me" }) %>
+     <%= f.select(:city, District.cities(@vendor.province), {}, { class: "form-control select2me", data: { placeholder: "请选择" } }) %>
    </div>
    <div class="col-md-2">
-     <%= select_tag(:region, nil, { :class => "form-control select2me" }) %>
+     <%= f.select(:region, District.regions(@vendor.province, @vendor.city), {}, { :class=>"form-control select2me", data: { placeholder: "请选择" } }) %>
    </div>
    <div class='col-md-3'>
-     <input type="text" class="form-control" name="email"/>
+     <!-- <input type="text" class="form-control" name="address"/> -->
+     <%= f.c_text_field(:address) %>
    </div>
   </div>
   <div class="form-group">
     <label class="control-label col-md-3">联系人</label>
     <div class="col-md-4">
-      <input type="password" class="form-control" name="rpassword"/>
+      <!-- <input type="text" class="form-control" name="contact"/> -->
+      <%= f.c_text_field(:contact) %>
     </div>
   </div>
   <div class="form-group">
     <label class="control-label col-md-3">职务</label>
     <div class="col-md-4">
-      <input type="text" class="form-control" name="email"/>
+      <!-- <input type="text" class="form-control" name="contact_position"/> -->
+      <%= f.c_text_field(:contact_position) %>
     </div>
   </div>
   <div class="form-group">
     <label class="control-label col-md-3">电话</label>
     <div class="col-md-4">
-      <input type="text" class="form-control" name="email"/>
+      <!-- <input type="text" class="form-control" name="telephone"/> -->
+      <%= f.c_text_field(:telephone) %>
     </div>
   </div>
   <div class="form-group">
     <label class="control-label col-md-3">手机</label>
     <div class="col-md-4">
-      <input type="text" class="form-control" name="email"/>
+      <!-- <input type="text" class="form-control" name="mobile"/> -->
+      <%= f.c_text_field(:mobile) %>
     </div>
   </div>
   <div class="form-group">
     <label class="control-label col-md-3">邮箱</label>
     <div class="col-md-4">
-      <input type="text" class="form-control" name="email"/>
+      <!-- <input type="text" class="form-control" name="email"/> -->
+      <%= f.c_text_field(:email) %>
     </div>
   </div>
   <div class="form-group">
     <label class="control-label col-md-3">传真</label>
     <div class="col-md-4">
-      <input type="text" class="form-control" name="email"/>
+      <!-- <input type="text" class="form-control" name="fix"/> -->
+      <%= f.c_text_field(:fax) %>
     </div>
   </div>
   <div class="form-group">
     <label class="control-label col-md-3">备注</label>
     <div class="col-md-4">
-      <input type="text" class="form-control" name="email"/>
+      <!-- <input type="text" class="form-control" name="memo"/> -->
+      <%= f.c_text_field(:memo) %>
     </div>
   </div>
 </div>

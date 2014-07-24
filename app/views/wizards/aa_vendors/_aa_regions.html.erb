@@ -1,0 +1,25 @@
+
+<div class="tab-pane active" id="tab2">
+  <div class="table-responsive">
+      <table id="table_regions" class="table table-hover table-bordered">
+        <thead>
+          <tr>
+            <th>省</th>
+            <th>市</th>
+            <th>区</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= f.fields_for :aa_regions do |r| %>
+            <%= render "aa_region_fields", :f => r %>
+          <% end %>
+          <tr>
+            <td colspan="4">
+            <%= link_to_add_fields "添加", f, :aa_regions %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</div>

@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140723062520) do
+ActiveRecord::Schema.define(version: 20140724084334) do
+
+  create_table "aa_regions", force: true do |t|
+    t.string   "province"
+    t.string   "city"
+    t.string   "district"
+    t.integer  "aa_vendor_id"
+    t.integer  "vendor_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "aa_service_orders", force: true do |t|
     t.datetime "created_at"
@@ -31,6 +41,19 @@ ActiveRecord::Schema.define(version: 20140723062520) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "disabled_at"
+  end
+
+  create_table "aa_workers", force: true do |t|
+    t.string   "name"
+    t.string   "mobile"
+    t.string   "id_no"
+    t.string   "driving_license_no"
+    t.string   "qualification_no"
+    t.integer  "aa_vendor_id"
+    t.integer  "vendor_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "car_owners", force: true do |t|
