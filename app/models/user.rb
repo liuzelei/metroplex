@@ -3,9 +3,9 @@ class User < ActiveRecord::Base
 
   devise :cas_authenticatable, :trackable
 
-  has_one :vendor
-  has_one :car_owner
-  has_one :customer
+  belongs_to :vendor
+  belongs_to :car_owner
+  belongs_to :customer
 
   class << self
     def current=(user)

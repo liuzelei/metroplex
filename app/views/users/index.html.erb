@@ -15,7 +15,6 @@
                 <th>服务商</th>
                 <th>客户经理</th>
                 <th>客户</th>
-                <th></th>
               </tr>
             </thead>
             <tbody>
@@ -23,12 +22,12 @@
                 <tr>
                   <td><%= f.username %></td>
                   <td><%= f.role %></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
                   <td>
-                    
+                    <%= link_to(f.vendor.no, edit_vendor_path(f.vendor)) unless f.vendor.nil? %>
+                    <%= link_to("注册服务商", new_wizards_vendor_path(user_id: f.id)) if f.vendor.nil? %>
                   </td>
+                  <td><%= link_to(f.customer.no, edit_customer_path(f.customer)) unless f.customer.nil? %></td>
+                  <td><%= link_to(f.car_owner.no, edit_car_owner_path(f.vendor)) unless f.car_owner.nil? %></td>
                 </tr>
               <% end %>
             </tbody>

@@ -13,7 +13,7 @@
            <div class="form-group">
              <%= render "shared/column", name: "账号", content: f.c_text_field(:username) %>
              <%= render "shared/column", name: "邮箱", content: f.c_text_field(:email) %>
-             <%= render "shared/column", name: "角色", content: f.select(:role, ["管理员", "服务商", "客户经理", "客户"], {}, { class: "form-control select2me", data: { placeholder: "请选择" } }) %>
+             <%= render "shared/column", name: "角色", content: f.select(:role, ["管理员", "服务商", "客户经理", "车主"], {}, { class: "form-control select2me", data: { placeholder: "请选择" } }) %>
            </div>
 
            <div class="form-group">
