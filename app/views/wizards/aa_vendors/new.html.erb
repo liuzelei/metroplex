@@ -13,7 +13,7 @@
         </div>
       </div>
       <div class="portlet-body form">
-        <%= form_for(@aa_vendor, url: wizards_vendors_path, method: :post, html: { class: "form-horizontal", id: "submit_form" }) do |f| %>
+        <%= form_for(@aa_vendor, url: wizards_aa_vendors_path, method: :post, html: { class: "form-horizontal", id: "submit_form" }) do |f| %>
           <div class="form-wizard">
             <div class="form-body">
             <%= f.error_messages %>
@@ -67,11 +67,11 @@
                   <button class="close" data-dismiss="alert"></button>
                   验证通过!
                 </div>
-                <%= render "aa_vendor", :f => f %>
-                <%= render "aa_regions", :f => f %>
-                <%= render "aa_trailers", :f => f %>
-                <%= render "aa_workers", :f => f %>
-                <%= %>
+                <%= render "aa_vendor", f: f %>
+                <%= render "aa_regions", f: f %>
+                <%= render "aa_trailers", f: f %>
+                <%= render "aa_workers", f: f %>
+                <%= render "confirm" %>
               </div>
             </div>
             <div class="form-actions fluid">
