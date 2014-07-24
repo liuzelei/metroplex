@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe VendorsController, :type => :controller do
+RSpec.describe VendorsController, type: :controller do
 
   before do
     @vendor = FactoryGirl.create(:vendor)

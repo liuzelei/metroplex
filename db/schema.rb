@@ -11,6 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20140724084334) do
 
   create_table "aa_regions", force: true do |t|
@@ -22,6 +23,9 @@ ActiveRecord::Schema.define(version: 20140724084334) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+=======
+ActiveRecord::Schema.define(version: 20140724084809) do
+>>>>>>> 6d8d4691dad32a982a300d732c4695265094fadc
 
   create_table "aa_service_orders", force: true do |t|
     t.datetime "created_at"
@@ -144,6 +148,9 @@ ActiveRecord::Schema.define(version: 20140724084334) do
     t.datetime "updated_at"
     t.string   "email"
     t.string   "name"
+    t.integer  "vendor_id"
+    t.integer  "car_owner_id"
+    t.integer  "customer_id"
   end
 
   create_table "vendors", force: true do |t|

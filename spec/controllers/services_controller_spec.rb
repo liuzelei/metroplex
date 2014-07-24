@@ -1,6 +1,11 @@
 require 'rails_helper'
 
-RSpec.describe ServicesController, :type => :controller do
+RSpec.describe ServicesController, type: :controller do
+
+  before do
+    @user = FactoryGirl.create(:admin_user)
+    sign_in :user, @user
+  end
 
   describe "GET 'index'" do
     it "returns http success" do
@@ -17,7 +22,4 @@ RSpec.describe ServicesController, :type => :controller do
       expect(assigns(:services).count).to eq(4)
     end
   end
-
-
-
 end

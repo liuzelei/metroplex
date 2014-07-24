@@ -1,0 +1,39 @@
+<% content_for :page_title do %>
+<%= render "title" %>
+<% end %>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="portlet box">
+      <div class="dataTables_wrapper form-inline" role="grid">
+        <div class="table-responsive">
+          <table class="table table-striped table-bordered table-hover" id="trailer_table">
+            <thead>
+              <tr>
+                <th>账号</th>
+                <th>角色</th>
+                <th>服务商</th>
+                <th>客户经理</th>
+                <th>客户</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @users.each do |f| %>
+                <tr>
+                  <td><%= f.username %></td>
+                  <td><%= f.role %></td>
+                  <td>
+                    <%= link_to(f.vendor.no, edit_vendor_path(f.vendor)) unless f.vendor.nil? %>
+                    <%= link_to("注册服务商", new_wizards_vendor_path(user_id: f.id)) if f.vendor.nil? %>
+                  </td>
+                  <td><%= link_to(f.customer.no, edit_customer_path(f.customer)) unless f.customer.nil? %></td>
+                  <td><%= link_to(f.car_owner.no, edit_car_owner_path(f.vendor)) unless f.car_owner.nil? %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
