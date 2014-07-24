@@ -28,5 +28,14 @@ class Ability
     #
     # See the wiki for details:
     # https://github.com/ryanb/cancan/wiki/Defining-Abilities
+    user ||= User.new
+    case user.role
+    when "管理员"
+      can :manage, :all
+    when "服务商"
+    when "客户经理"
+    when "车主"
+    end
+        
   end
 end

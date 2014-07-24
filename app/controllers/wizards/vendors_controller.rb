@@ -1,23 +1,12 @@
 module Wizards
   class VendorsController < ApplicationController
     layout "wizard"
-    def index
-
-    end
-
     def new
+      #redirect_to request.referer if 
       @vendor = Vendor.new
     end
 
     def create
-
-    end
-
-    def edit
-
-    end
-
-    def update
 
     end
   end

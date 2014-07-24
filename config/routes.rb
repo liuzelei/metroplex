@@ -23,7 +23,7 @@ Rails.application.routes.draw do
 
   namespace :wizards do
     resources :aa_vendors, only: [:new, :create]
-    resources :vendors
+    resources :vendors, only: [:new, :create]
   end
 
   get "home/index"
