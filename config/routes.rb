@@ -3,9 +3,6 @@ Rails.application.routes.draw do
   # devise :users
   devise_for :users, skip: [:registrations]
 
-  # resources :users
-  resources :users
-
   # resources :services
   resources :services, only: [:index]
 
@@ -25,6 +22,13 @@ Rails.application.routes.draw do
     resources :aa_vendors, only: [:new, :create]
     resources :vendors, only: [:new, :create]
   end
+
+  #namespace :admin do
+  resources :users
+  #end
+
+  resources :service_orders
+  resources :aa_service_orders
 
   get "home/index"
   
