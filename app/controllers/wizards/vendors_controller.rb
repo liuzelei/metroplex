@@ -9,6 +9,7 @@ module Wizards
 
     def create
       @vendor = Vendor.new(vendor_params)
+      @vendor.user = current_user
 
       if @vendor.save
         redirect_to new_wizards_vendor_path, notice: "注册成功"

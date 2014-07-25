@@ -4,7 +4,8 @@ class Vendor < ActiveRecord::Base
   include ModelConcerns::Searchable
 
   # association
-  has_one :aa_vendor
+  belongs_to :aa_vendor
+  has_one :user
 
   # validate
   validates :name, presence: true
