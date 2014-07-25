@@ -2,67 +2,73 @@
   <div class="form-group">
     <label class="control-label col-md-3">名称:</label>
     <div class="col-md-4">
-      <p class="form-control-static" data-display="username">
-      </p>
+      <!-- <p class="form-control-static" data-display="vendor[name]"> -->
+      <%= f.c_display_field(:name) %>
     </div>
   </div>
   <div class="form-group">
     <label class="control-label col-md-3">办公地址:</label>
     <div class="col-md-4">
-      <p class="form-control-static" data-display="province">
-      <p class="form-control-static" data-display="city">
-      <p class="form-control-static" data-display="region">
-      <p class="form-control-static" data-display="address">
-      </p>
+      <%= f.c_display_field(:province) %>
+      <%= f.c_display_field(:city) %>
+      <%= f.c_display_field(:region) %>
+      <%= f.c_display_field(:address) %>
     </div>
   </div>
   <div class="form-group">
     <label class="control-label col-md-3">联系人:</label>
     <div class="col-md-4">
-      <p class="form-control-static" data-display="fullname">
-      </p>
+      <!-- <p class="form-control-static" data-display="contact">
+      </p> -->
+      <%= f.c_display_field(:contact) %>
     </div>
   </div>
   <div class="form-group">
     <label class="control-label col-md-3">职务:</label>
     <div class="col-md-4">
-      <p class="form-control-static" data-display="gender">
-      </p>
+      <!-- <p class="form-control-static" data-display="contact_position">
+      </p> -->
+      <%= f.c_display_field(:contact_position) %>
     </div>
   </div>
   <div class="form-group">
     <label class="control-label col-md-3">电话:</label>
     <div class="col-md-4">
-      <p class="form-control-static" data-display="phone">
-      </p>
+      <!-- <p class="form-control-static" data-display="telephone">
+      </p> -->
+      <%= f.c_display_field(:telephone) %>
     </div>
   </div>
   <div class="form-group">
     <label class="control-label col-md-3">手机:</label>
     <div class="col-md-4">
-      <p class="form-control-static" data-display="address">
-      </p>
+      <!-- <p class="form-control-static" data-display="mobile">
+      </p> -->
+      <%= f.c_display_field(:mobile) %>
     </div>
   </div>
   <div class="form-group">
     <label class="control-label col-md-3">邮箱:</label>
     <div class="col-md-4">
-      <p class="form-control-static" data-display="city">
-      </p>
+      <!-- <p class="form-control-static" data-display="email">
+      </p> -->
+      <%= f.c_display_field(:email) %>
     </div>
   </div>
   <div class="form-group">
     <label class="control-label col-md-3">传真:</label>
     <div class="col-md-4">
-      <p class="form-control-static" data-display="country">
-      </p>
+      <!-- <p class="form-control-static" data-display="fix">
+      </p> -->
+      <%= f.c_display_field(:fax) %>
     </div>
   </div>
   <div class="form-group">
     <label class="control-label col-md-3">备注:</label>
     <div class="col-md-4">
-      <p class="form-control-static" data-display="remarks">
-      </p>
+      <!-- <p class="form-control-static" data-display="memo">
+      </p> -->
+      <%= f.c_display_field(:memo) %>
     </div>
   </div>
 </div>

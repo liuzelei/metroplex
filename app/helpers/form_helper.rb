@@ -47,6 +47,14 @@ module FormHelper
       end
     end
 
+    def c_display_field(label, *args)
+      options = args.extract_options!
+      new_class = options[:class] || "form-control-static"
+      new_value = options[:value] || object.send(label)
+      @template.label(object_name, label, class: new_class, data: { display: "#{object_name}[#{label}]" }, value: "") do
+      end
+    end
+
     def error_messages
       if object.errors.full_messages.any?
         @template.content_tag(:div, class: "alert alert-danger") do
