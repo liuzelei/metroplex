@@ -1,19 +1,11 @@
 <% content_for :page_title do %>
-<%= render "title_bar" %>
+<%= render "title" %>
 <% end %>
-
 
 <div class="row">
   <div class="col-md-12">
-    <div class="portlet box blue" id="form_wizard_1">
-      <div class="portlet-title">
-        <div class="caption">
-          <i class="fa fa-gift"></i> 注册向导 - <span class="step-title">
-          步骤 1 / 2 </span>
-        </div>
-      </div>
+    <div class="portlet box" id="form_wizard">
       <div class="portlet-body form">
-        <!-- <form action="#" class="form-horizontal" id="submit_form" method="POST"> -->
         <%= form_for(@vendor, url: wizards_vendors_path, method: :post, html: { class: "form-horizontal", id: "submit_form" }) do |f| %>
           <div class="form-wizard">
             <div class="form-body">
@@ -41,7 +33,7 @@
               <div class="tab-content">
                 <div class="alert alert-danger display-none">
                   <button class="close" data-dismiss="alert"></button>
-                  页面中有错误,请检查下面.
+                  页面中有错误,请检查.
                 </div>
                 <div class="alert alert-success display-none">
                   <button class="close" data-dismiss="alert"></button>
@@ -55,22 +47,21 @@
               <div class="row">
                 <div class="col-md-12">
                   <div class="col-md-offset-3 col-md-9">
-                    <a href="javascript:;" class="btn default button-previous">
+                    <a href="javascript:;" class="btn button-previous">
                     <i class="m-icon-swapleft"></i> 上一步 </a>
-                    <a href="javascript:;" class="btn blue button-next">
+                    <a href="javascript:;" class="btn default button-next">
                     下一步 <i class="m-icon-swapright m-icon-white"></i>
                     </a>
                     <!-- <a href="javascript:;" class="btn green button-submit">
                     提交 <i class="m-icon-swapright m-icon-white"></i>
                     </a> -->
-                    <button class="btn green button-submit" type="submit">提交<i class="m-icon-swapright m-icon-white"></i></button>
+                    <button class="btn button-submit" type="submit">提交<i class="m-icon-swapright m-icon-white"></i></button>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <% end %>
-        <!-- </form> -->
       </div>
     </div>
   </div>

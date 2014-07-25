@@ -1,6 +1,5 @@
 var FormWizard = function () {
 
-
   return {
     //main function to initiate the module
     init: function () {
@@ -10,7 +9,7 @@ var FormWizard = function () {
 
       function format(state) {
         if (!state.id) return state.text; // optgroup
-        return "<img class='flag' src='../../assets/global/img/flags/" + state.id.toLowerCase() + ".png'/>&nbsp;&nbsp;" + state.text;
+        return "<img class='flag' src='../../images/global/img/flags/" + state.id.toLowerCase() + ".png'/>&nbsp;&nbsp;" + state.text;
       }
 
       var form = $('#submit_form');
@@ -114,33 +113,33 @@ var FormWizard = function () {
         var total = navigation.find('li').length;
         var current = index + 1;
         // set wizard title
-        $('.step-title', $('#form_wizard_1')).text('步骤 ' + (index + 1) + ' / ' + total);
+        $('.step-title', $('#form_wizard')).text('步骤 ' + (index + 1) + ' / ' + total);
         // set done steps
-        jQuery('li', $('#form_wizard_1')).removeClass("done");
+        jQuery('li', $('#form_wizard')).removeClass("done");
         var li_list = navigation.find('li');
         for (var i = 0; i < index; i++) {
           jQuery(li_list[i]).addClass("done");
         }
 
         if (current == 1) {
-          $('#form_wizard_1').find('.button-previous').hide();
+          $('#form_wizard').find('.button-previous').hide();
         } else {
-          $('#form_wizard_1').find('.button-previous').show();
+          $('#form_wizard').find('.button-previous').show();
         }
 
         if (current >= total) {
-          $('#form_wizard_1').find('.button-next').hide();
-          $('#form_wizard_1').find('.button-submit').show();
+          $('#form_wizard').find('.button-next').hide();
+          $('#form_wizard').find('.button-submit').show();
           displayConfirm();
         } else {
-          $('#form_wizard_1').find('.button-next').show();
-          $('#form_wizard_1').find('.button-submit').hide();
+          $('#form_wizard').find('.button-next').show();
+          $('#form_wizard').find('.button-submit').hide();
         }
         Metronic.scrollTo($('.page-title'));
       }
 
       // default form wizard
-      $('#form_wizard_1').bootstrapWizard({
+      $('#form_wizard').bootstrapWizard({
         'nextSelector': '.button-next',
         'previousSelector': '.button-previous',
         onTabClick: function (tab, navigation, index, clickedIndex) {
@@ -171,14 +170,14 @@ var FormWizard = function () {
           var total = navigation.find('li').length;
           var current = index + 1;
           var $percent = (current / total) * 100;
-          $('#form_wizard_1').find('.progress-bar').css({
+          $('#form_wizard').find('.progress-bar').css({
             width: $percent + '%'
           });
         }
       });
 
-      $('#form_wizard_1').find('.button-previous').hide();
-      $('#form_wizard_1 .button-submit').click(function () {
+      $('#form_wizard').find('.button-previous').hide();
+      $('#form_wizard .button-submit').click(function () {
 
       }).hide();
     }

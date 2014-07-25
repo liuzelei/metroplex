@@ -3,6 +3,7 @@ module Wizards
     layout "wizard"
 
     def new
+      #redirect_to request.referer if 
       @vendor = Vendor.new
     end
 
@@ -18,7 +19,8 @@ module Wizards
 
     private
     def vendor_params
-      params.require(:vendor).permit(:name, :province, :city, :region, :address, :contact, :contact_position, :telephone, :mobile, :email, :fax, :memo)
+      params.require(:vendor).permit(:name, :province, :city, :region, :address, :contact, 
+                                     :contact_position, :telephone, :mobile, :email, :fax, :memo)
     end
   end
 end
