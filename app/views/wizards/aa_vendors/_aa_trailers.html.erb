@@ -1,4 +1,23 @@
-
 <div class="tab-pane active" id="tab3">
-  
+  <div class="table-responsive">
+    <table id="table_trailers" class="table table-hover table-bordered">
+      <thead>
+        <tr>
+          <th>车牌号</th>
+          <th>车辆类型</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= f.fields_for :aa_trailers do |r| %>
+          <%= render "aa_trailer_fields", f: r %>
+        <% end %>
+        <tr>
+          <td colspan="4">
+          <%= link_to_add_fields "添加", f, :aa_trailers %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>  
 </div>
