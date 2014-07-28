@@ -33,6 +33,8 @@ class Ability
     when "管理员"
       can :manage, :all
     when "服务商"
+      # 能够管理服务订单,除非当前服务商没有aa_vendor信息
+      can :manage, AaServiceOrder unless user.vendor.nil? || user.vendor.aa_vendor.nil?
     when "客户经理"
     when "车主"
     end

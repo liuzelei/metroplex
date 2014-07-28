@@ -11,10 +11,18 @@
     </a>
     <ul class="dropdown-menu">
       <li><%= link_to "订单", service_orders_path, { id: "menu_service_orders" } %></li>
+      <% if can? :manage, AaServiceOrder %>
       <li><%= link_to "救援", aa_service_orders_path, { id: "menu_aa_service_orders" } %></li>
+      <% end %>
+      <% if can? :manage, AaTrailer %>
       <li><%= link_to "救援车", aa_trailers_path, { id: "menu_aa_trailers" } %></li>
+      <% end %>
+      <% if can? :manage, AaWorker %>
       <li><%= link_to "救援工", aa_workers_path, { id: "menu_aa_workers" } %></li>
+      <% end %>
+      <% if can? :manage, LocatorDevice %>
       <li><%= link_to "定位设备", locator_devices_path, { id: "menu_locator_devices" } %></li>
+      <% end %>
     </ul>
   </li>
 
