@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140724084809) do
+ActiveRecord::Schema.define(version: 20140728073420) do
 
   create_table "aa_regions", force: true do |t|
     t.string   "province"
@@ -116,6 +116,17 @@ ActiveRecord::Schema.define(version: 20140724084809) do
     t.string   "province"
     t.string   "city"
     t.string   "region"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "locator_devices", force: true do |t|
+    t.integer  "aa_vendor_id"
+    t.string   "account_id"
+    t.string   "account_name"
+    t.string   "account_password"
+    t.string   "imei"
+    t.datetime "disabled_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

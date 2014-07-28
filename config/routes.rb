@@ -31,6 +31,7 @@ Rails.application.routes.draw do
   resources :aa_service_orders
   resources :aa_trailers
   resources :aa_workers
+  resources :locator_devices
 
   get "home/index"
   
