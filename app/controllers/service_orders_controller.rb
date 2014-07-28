@@ -1,6 +1,6 @@
 class ServiceOrdersController < ApplicationController
   def index
-    
+    @service_orders = ServiceOrder.all
   end
 
   def new
