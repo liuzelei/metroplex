@@ -24,7 +24,6 @@
                   <td><%= f.role %></td>
                   <td>
                     <%= link_to(f.vendor.no, edit_vendor_path(f.vendor)) unless f.vendor.nil? %>
-                    <%= link_to("注册服务商", wizards_vendor_register_basic_info_path(user_id: f.id)) if f.vendor.nil? %>
                   </td>
                   <td><%= link_to(f.customer.no, edit_customer_path(f.customer)) unless f.customer.nil? %></td>
                   <td><%= link_to(f.car_owner.no, edit_car_owner_path(f.vendor)) unless f.car_owner.nil? %></td>

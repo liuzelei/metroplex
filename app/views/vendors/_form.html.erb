@@ -11,15 +11,7 @@
            <%= f.error_messages %>
            <h4 class="form-section">基本信息</h4>
            <div class="form-group">
-             <%= render "shared/column", :name => "名称", :content => f.c_text_field(:name) %>
-             <label class="control-label col-md-1">禁用</label>
-             <div class="col-md-1">
-               <div class="checkbox-list">
-                 <label class="checkbox-inline">
-                   <%= f.check_box(:disabled?, :class => "form-control" ) %>
-                 </label>
-               </div>
-             </div>
+             <%= render "shared/column_double", :name => "名称", :content => f.c_text_field(:name) %>
            </div>
 
            <div class="form-group">

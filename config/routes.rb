@@ -21,11 +21,9 @@ Rails.application.routes.draw do
   namespace :wizards do
     resources :aa_vendors, only: [:new, :create, :message]
     namespace :vendor_register do
-      get :basic_info
+      get :collect
       post :basic_info_verify
-      get :review
       post :commit
-      get :message
     end
   end
 

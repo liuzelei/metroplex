@@ -1,13 +1,16 @@
 module Wizards
   class VendorRegisterController < ApplicationController
-    def basic_info
-      @vendor = Vendor.new
+    def collect
+      unless current_user.vendor.nil?
+        @vendor = Vendor.new
+      else
+        redirect_to request.referer, notice: "你已经成功注册服务商信息,不需要重复注册."
+      end
     end
 
     def basic_info_verify
       @vendor = Vendor.new(basic_info_verify_vendor_register_params)
       if @vendor.valid?
-        #redirect_to wizards_vendor_register_message_path
         render nothing: true, layout: nil, status: 204
       else
         @object = @vendor
@@ -20,14 +23,12 @@ module Wizards
       @vendor.user = current_user
 
       if @vendor.save
-        render nothing: true, layout: nil, status: 204, notice: "注册成功,请耐心等待审核."
+        flash[:notice] = "注册成功,请耐心等待审核."
+        render nothing: true, layout: nil, status: 204
       else
+        @object = @vendor
         render partial: "shared/errors", layout: nil
       end
-    end
-
-    def message
-      p flash[:notice]
     end
 
     private

@@ -1,6 +1,11 @@
 jQuery(document).ready(function(){
   $("#vendor_province").change(function(e){
+    console.debug("ssssss");
     fillCities($("#vendor_province"), $("#vendor_city"));
+  });
+
+  $("#vendor_province").click(function(e){
+    console.debug("ssssssssss");
   });
 
   $("#vendor_city").change(function(e){
@@ -16,8 +21,6 @@ jQuery(document).ready(function(){
   });
 
   $("#basic_info_form").on("ajax:success", function(e, data, status, xhr){
-    console.debug(xhr.status);
-    console.debug(xhr.responseText);
     if(xhr.status === 200){
       $("#basic_info_form .form-body .alert").remove();
       $("#basic_info_form .form-body").prepend(xhr.responseText);
@@ -32,14 +35,12 @@ jQuery(document).ready(function(){
   });
 
   $("#confirm_form").on("ajax:success", function(e, data, status, xhr){
-    console.debug(xhr.status);
-    console.debug(xhr.responseText);
     if (xhr.status === 200){
-      $("#basic_info_form .form-body .alert").remove();
-      $("#basic_info_form .form-body").prepend(xhr.responseText);
+      $("#confirm_form .form-body .alert").remove();
+      $("#confirm_form .form-body").prepend(xhr.responseText);
       Metronic.runResizeHandlers();
     }else if(xhr.status === 204){
-      window.location.href = "message";
+      window.location.href = "/";
     }
   });
 
