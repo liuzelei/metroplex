@@ -2,8 +2,6 @@
 <%= render "title" %>
 <% end %>
 
-<%= render "shared/progress_bar" %>
-
 <div class="row">
   <div class="col-md-12">
     <div class="portlet box">
@@ -61,6 +59,5 @@
 </div>
 
 <% content_for :page_scripts do %>
-  <%= javascript_include_tag "vendors" %>
   <%= javascript_include_tag "wizard_vendor" %>
 <% end %>

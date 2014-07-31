@@ -1,23 +1,10 @@
 jQuery(document).ready(function(){
   $("#vendor_province").change(function(e){
-    console.debug("ssssss");
     fillCities($("#vendor_province"), $("#vendor_city"));
-  });
-
-  $("#vendor_province").click(function(e){
-    console.debug("ssssssssss");
   });
 
   $("#vendor_city").change(function(e){
     fillRegions($("#vendor_province"), $("#vendor_city"), $("#vendor_region"));
-  });
-
-  $("#province").change(function(e){
-    fillCities($("#province"), $("#city"));
-  });
-
-  $("#city").change(function(e){
-    fillRegions($("#province"), $("#city"), $("#region"));
   });
 
   $("#basic_info_form").on("ajax:success", function(e, data, status, xhr){
@@ -59,5 +46,9 @@ function setAllValues(){
   $("#basic_info_form textarea").each(function(index, item){
     item = $(item);
     $("#confirm_form textarea[name='" + item.attr("name") + "']").val(item.val());
+  });
+  $("#basic_info_form select").each(function(index, item){
+    item = $(item);
+    $("#confirm_form input[name='" + item.attr("name") + "']").val(item.val());
   });
 }

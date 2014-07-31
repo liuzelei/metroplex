@@ -1,7 +1,8 @@
 module Wizards
   class VendorRegisterController < ApplicationController
+    layout "form"
     def collect
-      unless current_user.vendor.nil?
+      if current_user.vendor.nil?
         @vendor = Vendor.new
       else
         redirect_to request.referer, notice: "你已经成功注册服务商信息,不需要重复注册."

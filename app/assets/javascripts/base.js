@@ -44,6 +44,8 @@ function fillProvinces(province_control){
 }
 
 function fillCities(province_control, city_control){
+  console.debug(province_control);
+  console.debug(city_control);
   $.ajax({
     url: "/ajax/districts/cities?province=" + $(province_control).val()
   }).done(function(data){
