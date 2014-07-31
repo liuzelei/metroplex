@@ -1,0 +1,8 @@
+<div class="alert alert-danger">
+  <strong>错误</strong>
+  <ul>
+    <% @object.errors.full_messages.map do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>

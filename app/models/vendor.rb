@@ -8,7 +8,7 @@ class Vendor < ActiveRecord::Base
   has_one :user
 
   # validate
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: true
 
   # sequence
   sequence :VE

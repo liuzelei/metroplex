@@ -14,5 +14,4 @@ jQuery(document).ready(function(){
   $("#city").change(function(e){
     fillRegions($("#province"), $("#city"), $("#region"));
   });
-  
 });

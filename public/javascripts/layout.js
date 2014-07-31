@@ -616,20 +616,20 @@ var Layout = function () {
   }
 
   var handleStickyActionButtons = function () {
-    if ($(".form-actions").length != 0){
-      $(".form-actions").css("position", "static");
+    if ($(".form-actions:visible").length != 0){
+      $(".form-actions:visible").css("position", "static");
 
       offset_init = $(window).height() - 
                   $(".page-footer").outerHeight() - 
-                  $(".form-actions").outerHeight() - 
-                  $(".form-actions").offset().top;
+                  $(".form-actions:visible").outerHeight() - 
+                  $(".form-actions:visible").offset().top;
 
-      $(".form-actions").css("z-index", 10000)
+      $(".form-actions:visible").css("z-index", 10000)
                         .css("position", "relative")
                         .css("top", $(window).scrollTop() + offset_init);
 
       $(window).scroll(function(){
-        $(".form-actions").css("top", $(window).scrollTop() + offset_init);
+        $(".form-actions:visible").css("top", $(window).scrollTop() + offset_init);
       });
     }
   }

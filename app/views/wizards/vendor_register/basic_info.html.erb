@@ -1,0 +1,107 @@
+<% content_for :page_title do %>
+<%= render "title" %>
+<% end %>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="portlet box">
+      <div class="portlet-body form">
+      <%= form_for(@vendor, url: wizards_vendor_register_basic_info_verify_path, method: :post, html: { id: "basic_info_form", class: "form-horizontal" }, remote: true ) do |f| %>
+        <div class="form-body">
+          <h4 class="form-section">供应商基本信息</h4>
+          <div class="form-group">
+            <%= render "shared/column_double", name: "名称", content: f.c_text_field(:name) %>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-md-1">办公地址</label>
+            <div class="col-md-2">
+              <%= f.select(:province, District.provinces, {}, { class: "form-control select2me", data: { placeholder: "请选择" } }) %>
+            </div>
+            <div class="col-md-2">
+              <%= f.select(:city, District.cities(@vendor.province), {}, { class: "form-control select2me", data: { placeholder: "请选择" } }) %>
+            </div>
+            <div class="col-md-2">
+              <%= f.select(:region, District.regions(@vendor.province, @vendor.city), {}, { class: "form-control select2me", data: { placeholder: "请选择" } }) %>
+            </div>
+            <div class='col-md-5'>
+              <%= f.c_text_field(:address) %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <%= render "shared/column", name: "联系人", content: f.c_text_field(:contact) %>
+            <%= render "shared/column", name: "职务", content: f.c_text_field(:contact_position) %>
+            <%= render "shared/column", name: "电话", content: f.c_text_field(:telephone) %>
+          </div>
+
+          <div class="form-group">
+            <%= render "shared/column", name: "手机", content: f.c_text_field(:mobile) %>
+            <%= render "shared/column", name: "邮箱", content: f.c_text_field(:email) %>
+            <%= render "shared/column", name: "传真", content: f.c_text_field(:fax) %>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-md-1">备注</label>
+            <div class='col-md-11'>
+              <%= f.text_area(:memo, { class: "form-control" }) %>
+            </div>
+          </div>
+        </div>
+        <div class="form-actions right">
+          <button type="submit" class="btn">下一步</button>
+        </div>
+      <% end %>
+      <%= form_for(@vendor, url: wizards_vendor_register_commit_path, method: :post, html: { id: "confirm_form", class: "form-horizontal display-none" }, remote: true ) do |f| %>
+        <div class="form-body">
+          <h4 class="form-section">注册信息确认</h4>
+          <div class="form-group">
+            <%= render "shared/column_double", name: "名称", content: f.c_text_field(:name, { readonly: true }) %>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-md-1">办公地址</label>
+            <div class="col-md-2">
+              <%= f.c_text_field(:province, { readonly: true }) %>
+            </div>
+            <div class="col-md-2">
+              <%= f.c_text_field(:city, { readonly: true }) %>
+            </div>
+            <div class="col-md-2">
+              <%= f.c_text_field(:region, { readonly: true }) %>
+            </div>
+            <div class='col-md-5'>
+              <%= f.c_text_field(:address, { readonly: true }) %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <%= render "shared/column", name: "联系人", content: f.c_text_field(:contact, { readonly: true }) %>
+            <%= render "shared/column", name: "职务", content: f.c_text_field(:contact_position, { readonly: true }) %>
+            <%= render "shared/column", name: "电话", content: f.c_text_field(:telephone, { readonly: true }) %>
+          </div>
+
+          <div class="form-group">
+            <%= render "shared/column", name: "手机", content: f.c_text_field(:mobile, { readonly: true }) %>
+            <%= render "shared/column", name: "邮箱", content: f.c_text_field(:email, { readonly: true }) %>
+            <%= render "shared/column", name: "传真", content: f.c_text_field(:fax, { readonly: true }) %>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-md-1">备注</label>
+            <div class='col-md-11'>
+              <%= f.text_area(:memo, { class: "form-control", readonly: true }) %>
+            </div>
+          </div>
+        </div>
+        <div class="form-actions right">
+          <button type="button" id="confirm_prev_button" class="btn">上一步</button>
+          <button type="submit" class="btn">提交</button>
+        </div>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% content_for :page_scripts do %>
+  <%= javascript_include_tag "wizard_vendor_register" %>
+<% end %>

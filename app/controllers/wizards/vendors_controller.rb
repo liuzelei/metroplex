@@ -1,9 +1,6 @@
 module Wizards
-  class VendorsController < ApplicationController
-    layout "wizard"
-
+  class VendorsController < Wizards::BaseController
     def new
-      #redirect_to request.referer if 
       @vendor = Vendor.new
     end
 
@@ -16,6 +13,10 @@ module Wizards
       else
         render action: "new", notice: "注册失败"
       end
+    end
+
+    def message
+      
     end
 
     private

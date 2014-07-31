@@ -19,13 +19,19 @@ Rails.application.routes.draw do
   end
 
   namespace :wizards do
-    resources :aa_vendors, only: [:new, :create]
-    resources :vendors, only: [:new, :create]
+    resources :aa_vendors, only: [:new, :create, :message]
+    namespace :vendor_register do
+      get :basic_info
+      post :basic_info_verify
+      get :review
+      post :commit
+      get :message
+    end
   end
 
-  #namespace :admin do
-  resources :users
-  #end
+  namespace :admin do
+    resources :users
+  end
 
   resources :service_orders
   resources :aa_service_orders
